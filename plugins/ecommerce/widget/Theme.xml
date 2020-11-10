@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<theme name="ec_default"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://ofbiz.apache.org/Widget-Theme" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Theme http://ofbiz.apache.org/dtds/widget-theme.xsd">
+    <visual-themes>
+        <visual-theme id="EC_DEFAULT" display-name="Ecommerce Default">
+            <description>${util:label('CommonEntityLabels', 'VisualTheme.description.EC_DEFAULT', locale)}</description>
+            <screenshot location="/images/ecdefaulttheme.jpg"/>
+        </visual-theme>
+    </visual-themes>
+    <!-- Here we can define custom theme for ecommerce, no need to extend common theme -->
+    <extends location="component://common-theme/widget/Theme.xml"/>
+
+    <theme-properties>
+
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/common/js/jquery/plugins/validate/additional-methods.min.js"/>
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/common/js/jquery/plugins/Readmore.js-master/readmore.js"/>
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/common/js/jquery/plugins/jquery-jgrowl/jquery.jgrowl-1.4.6.min.js"/>
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/ecommerce/js/bootstrap/js/bootstrap-4.3.1.min.js"/>
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/ecommerce/js/bootstrap/js/bootstrap.bundle-4.3.1.min.js"/>
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/ecommerce/js/bsgdprcookies/jquery.bs.gdpr.cookies.min.js"/>
+
+
+        <!--Css style-->
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/js/bootstrap/css/bootstrap-4.3.1.min.css"/>
+        <property name="VT_STYLESHEET['add']" value="/common/js/jquery/plugins/jquery-jgrowl/jquery.jgrowl-1.4.6.min.css"/>
+        <property name="VT_STYLESHEET['add']" value="/contentimages/css/contentForum.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/images/blog.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/custom.css"/>
+
+
+
+
+
+<!--        <property name="VT_HDR_JAVASCRIPT['add']" value="/ecommerce/customjs/bootstrap.js"/>-->
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/ecommerce/customjs/custom.js"/>
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/ecommerce/customjs/jquery.simpleGallery.js"/>
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/ecommerce/customjs/jquery.simpleLens.js"/>
+
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/ecommerce/customjs/jquery.smartmenus.bootstrap.js"/>
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/ecommerce/customjs/jquery.smartmenus.js"/>
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/ecommerce/customjs/nouislider.js"/>
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/ecommerce/customjs/sequence.js"/>
+
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/ecommerce/customjs/sequence-theme.modern-slide-in.js"/>
+        <property name="VT_HDR_JAVASCRIPT['add']" value="/ecommerce/customjs/slick.js"/>
+
+
+
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/slick.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/style.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/jquery.simpleLens.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/jquery.smartmenus.bootstrap.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/nouislider.css"/>
+<!--        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/bootstrap.css"/>-->
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/sequence-theme.modern-slide-in.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/font-awesome.css"/>
+
+
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/theme-color/bridge-theme.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/theme-color/dark-red-theme.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/theme-color/default-theme.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/theme-color/green-theme.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/theme-color/lite-blue-theme.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/theme-color/orange-theme.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/theme-color/pink-theme.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/theme-color/purple-theme.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/theme-color/red-theme.css"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/css/theme-color/yellow-theme.css"/>
+
+
+
+
+        <!-- scss entries -->
+
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/scss/base/_base.scss"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/scss/base/_mixins.scss"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/scss/base/_variables.scss"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/scss/layouts/_footer.scss"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/scss/layouts/_header.scss"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/scss/layouts/_nav.scss"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/scss/modules/_buttons.scss"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/scss/modules/_responsive.scss"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/scss/modules/_sections.scss"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/scss/style.scss"/>
+        <property name="VT_STYLESHEET['add']" value="/ecommerce/css/customcss/scss/modules/_typography.scss"/>
+
+
+
+
+        <!--header image -->
+        <property name="VT_HDR_IMAGE_URL" value="../img/logo.png"/>
+        <property name="VT_SHORTCUT_ICON" value="/images/favicon"/>
+        <property name="VT_BNR_IMAGE_URL" value="/img/banner_img.png"/>
+        <!--template location-->
+        <property name="VT_HDR_TMPLT_LOC" value="component://ecommerce/template/includes/Header.ftl"/>
+        <property name="VT_HDR_CUSTOM_TMPLT_LOC" value="component://ecommerce/template/includes/HeaderSection.ftl"/>
+        <property name="VT_FTR_TMPLT_LOC" value="component://ecommerce/template/includes/Footer.ftl"/>
+    </theme-properties>
+</theme>

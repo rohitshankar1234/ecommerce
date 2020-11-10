@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<simple-methods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns="http://ofbiz.apache.org/Simple-Method" xsi:schemaLocation="http://ofbiz.apache.org/Simple-Method http://ofbiz.apache.org/dtds/simple-methods.xsd">
+
+
+    <simple-method method-name="getVisualThemeResources" short-description="Get visual theme resources" login-required="false">
+        <set field="visualThemeId" from-field="parameters.visualThemeId"/>
+        <set field="themeResources" from-field="parameters.themeResources"/>
+        <entity-condition entity-name="VisualThemeResource" list="resourceList" use-cache="true">
+            <condition-expr field-name="visualThemeId" from-field="visualThemeId"/>
+            <order-by field-name="resourceTypeEnumId"/>
+            <order-by field-name="sequenceId"/>
+        </entity-condition>
+        <if-empty field="resourceList">
+            <!-- if not found use the good old initial ofbiz theme so the system will at least start up and will be usable -->
+            <log level="error" message="Could not find the '${visualThemeId}' theme, reverting back to the good old OFBiz theme..."></log>
+            <entity-condition entity-name="VisualThemeResource" list="resourceList" use-cache="true">
+                <condition-expr field-name="visualThemeId" value="FINVENTORY"/>
+                <order-by field-name="resourceTypeEnumId"/>
+                <order-by field-name="sequenceId"/>
+            </entity-condition>
+        </if-empty>
+        <if-empty field="resourceList">
+            <add-error><fail-property resource="CommonUiLabels" property="CommonVisualThemeResourcesNotFound"/></add-error>
+            <check-errors/>
+        </if-empty>
+        <iterate list="resourceList" entry="resourceRecord">
+            <set field="resourceTypeEnumId" from-field="resourceRecord.resourceTypeEnumId"/>
+            <set field="resourceValue" from-field="resourceRecord.resourceValue"/>
+            <if-empty field="resourceValue">
+                <property-to-field field="warningMsg" property="CommonVisualThemeInvalidRecord" resource="CommonUiLabels"/>
+                <log level="warning" message="${warningMsg}"/>
+                <else>
+                    <set field="themeResources[resourceTypeEnumId][]" from-field="resourceValue"/>
+                </else>
+            </if-empty>
+        </iterate>
+        <field-to-result field="themeResources"/>
+    </simple-method>
+    
+</simple-methods>
