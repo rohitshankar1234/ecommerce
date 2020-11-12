@@ -78,12 +78,14 @@ under the License.
         <filter-class>org.apache.ofbiz.webapp.control.ControlFilter</filter-class>
         <init-param>
             <param-name>allowedPaths</param-name>
-            <param-value>/error:/control:/products:/select:/index.html:/index.jsp:/robots.txt:/default.html:/default.jsp:/images:/css:/js</param-value>
+            <param-value>/error:/control:/products:/select:/index.html:/index.jsp:/robots.txt:/default.html:/default.jsp:/images:/css:/:/customcss:/customjs:/img:/customcss/scss:/customcss/css:/customcss/scss/base:/customcss/scss/layouts:/customcss/scss/modules</param-value>
         </init-param>
         <init-param>
             <param-name>redirectPath</param-name>
             <param-value>/control/main</param-value>
         </init-param>
+
+
     </filter>
     <filter>
         <display-name>SameSiteFilter</display-name>
@@ -126,6 +128,7 @@ under the License.
         <servlet-class>org.apache.ofbiz.webapp.control.ControlServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+   
     <!-- un-comment for Worldpay
     <servlet>
         <description>WorldPay Select Handler Service</description>
@@ -135,6 +138,8 @@ under the License.
         <load-on-startup>5</load-on-startup>
     </servlet>
     -->
+
+
     <servlet>
         <description>Catalog (Category/Product) URL Servlet</description>
         <display-name>CatalogUrlServlet</display-name>

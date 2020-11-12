@@ -32,8 +32,7 @@
     });
     </script>
 
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
 
 <#assign shoppingCart = sessionAttributes.shoppingCart!>
 <#if shoppingCart?has_content>
@@ -42,8 +41,13 @@
   <#assign shoppingCartSize = 0>
 </#if>
 
+
+
      <#if layoutSettings.headerImageUrl??>
             <#assign headerImageUrl = layoutSettings.headerImageUrl>
+            <#elseif layoutSettings.VT_HDR_IMAGE_URL??>
+                       <#assign headerImageUrl = layoutSettings.VT_HDR_IMAGE_URL>
+
             </#if>
 
 
@@ -64,18 +68,7 @@
                      <a href="<@ofbizUrl>main</@ofbizUrl>">
                                <span class="glyphicon glyphicon-home"></span>
                              </a>
-                     <!--
-                       <div class="dropdown">
-                         <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                           <img src="img/flag/english.jpg" alt="english flag">ENGLISH
-                           <span class="caret"></span>
-                         </a>
-                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                           <li><a href="#"><img src="img/flag/french.jpg" alt="">FRENCH</a></li>
-                           <li><a href="#"><img src="img/flag/english.jpg" alt="">ENGLISH</a></li>
-                         </ul>
-                       </div>
-                       -->
+
                      </div>
                      <!-- / language -->
 
@@ -116,7 +109,20 @@
                            <#else>
                               <li class="hidden-xs">Checkout</li>
                            </#if>
-                       <li><a href="<@ofbizUrl>${checkLoginUrl}</@ofbizUrl>" data-toggle="modal" data-target="#login-modal">Login</a></li>
+
+
+                        <#if userLogin?has_content && userLogin.userLoginId != "anonymous">
+                               <li  class="hidden-xs">
+                                 <a class="nav-link" href="<@ofbizUrl>logout</@ofbizUrl>">${uiLabelMap.CommonLogout}</a>
+                               </li>
+                             <#else>
+                               <li  class="hidden-xs">
+                                 <a class="nav-link" href="<@ofbizUrl>${checkLoginUrl}</@ofbizUrl>">${uiLabelMap.CommonLogin}</a>
+                               </li>
+                               <li  class="hidden-xs">
+                                 <a class="nav-link" href="<@ofbizUrl>newcustomer</@ofbizUrl>">${uiLabelMap.EcommerceRegister}</a>
+                               </li>
+                             </#if>
                      </ul>
                    </div>
                  </div>
@@ -137,7 +143,10 @@
 
                      <!-- img based logo -->
                       <#if layoutSettings.VT_HDR_IMAGE_URL?has_content>
-                                <img src="<@ofbizContentUrl>${layoutSettings.VT_HDR_IMAGE_URL}</@ofbizContentUrl>" alt="Logo"/>
+ <a href="<@ofbizUrl>main</@ofbizUrl>">
+                               <img src="/ecommerce${layoutSettings.VT_HDR_IMAGE_URL}"/>
+                             </a>
+
                                </#if>
 
                    </div>
@@ -155,7 +164,7 @@
                      <div class="aa-cartbox-summary">
                        <ul>
                          <li>
-                           <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
+                           <a class="aa-cartbox-img" href="#"><img src="/ecommerce/img/woman-small-2.jpg" alt="img"></a>
                            <div class="aa-cartbox-info">
                              <h4><a href="#">Product Name</a></h4>
                              <p>1 x $250</p>
@@ -163,7 +172,7 @@
                            <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
                          </li>
                          <li>
-                           <a class="aa-cartbox-img" href="#"><img src="img/woman-small-1.jpg" alt="img"></a>
+                           <a class="aa-cartbox-img" href="#"><img src="/ecommerce/img/woman-small-1.jpg" alt="img"></a>
                            <div class="aa-cartbox-info">
                              <h4><a href="#">Product Name</a></h4>
                              <p>1 x $250</p>

@@ -45,6 +45,7 @@ $(document).ready(function() {
   <div class="row align-items-center">
     <div class="col">
       <a class="navbar-brand" href="<@ofbizUrl>main</@ofbizUrl>">
+
       <!--
           <#if sessionAttributes.overrideLogo??>
             <img src="<@ofbizContentUrl>${sessionAttributes.overrideLogo}</@ofbizContentUrl>" alt="Logo"/>
@@ -56,6 +57,8 @@ $(document).ready(function() {
           -->
         </a>
     </div>
+
+
     <div class="col text-center d-none d-lg-block">
       <#if !productStore??>
             <h3>${uiLabelMap.EcommerceNoProductStore}</h3>

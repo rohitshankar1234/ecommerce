@@ -28,7 +28,7 @@ under the License.
             <!-- single slide item -->
             <li>
               <div class="seq-model">
-                <img data-seq src="../img/slider/paypal.jpg" alt="Men slide img" />
+                <img data-seq src="<@ofbizContentUrl>/ecommerce/img/paypal.jpg</@ofbizContentUrl>" alt="Men slide img" />
               </div>
               <div class="seq-title">
                <span data-seq>Save Up to 75% Off</span>
@@ -40,7 +40,7 @@ under the License.
             <!-- single slide item -->
             <li>
               <div class="seq-model">
-                <img data-seq src="../img/slider/2.jpg" alt="Wristwatch slide img" />
+                <img data-seq src="<@ofbizContentUrl>img/slider/2.jpg</@ofbizContentUrl>" alt="Wristwatch slide img" />
               </div>
               <div class="seq-title">
                 <span data-seq>Save Up to 40% Off</span>
@@ -52,7 +52,7 @@ under the License.
             <!-- single slide item -->
             <li>
               <div class="seq-model">
-                <img data-seq src="../img/slider/3.jpg" alt="Women Jeans slide img" />
+                <img data-seq src="<@ofbizContentUrl>img/slider/3.jpg</@ofbizContentUrl>" alt="Women Jeans slide img" />
               </div>
               <div class="seq-title">
                 <span data-seq>Save Up to 75% Off</span>
@@ -64,7 +64,7 @@ under the License.
             <!-- single slide item -->
             <li>
               <div class="seq-model">
-                <img data-seq src="../img/slider/4.jpg" alt="Shoes slide img" />
+                <img data-seq src="<@ofbizContentUrl>img/slider/4.jpg</@ofbizContentUrl>" alt="Shoes slide img" />
               </div>
               <div class="seq-title">
                 <span data-seq>Save Up to 75% Off</span>
@@ -76,7 +76,7 @@ under the License.
             <!-- single slide item -->
              <li>
               <div class="seq-model">
-                <img data-seq src="../img/slider/5.jpg" alt="Male Female slide img" />
+                <img data-seq src="<@ofbizContentUrl>img/slider/5.jpg</@ofbizContentUrl>" alt="Male Female slide img" />
               </div>
               <div class="seq-title">
                 <span data-seq>Save Up to 50% Off</span>
