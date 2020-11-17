@@ -1,0 +1,48 @@
+
+
+
+/* BASE - Base tyles, Variables, Mixins, etc. */
+
+
+@import '/ecommerce/customcss/scss/base/_variables.scss';
+@import '/ecommerce/customcss/scss/base/_mixins.scss';
+@import '/ecommerce/customcss/scss/base/_base.scss';
+
+/* MODULES - Individual site components */
+
+@import '/ecommerce/customcss/scss/modules/_typography.scss';
+@import '/ecommerce/customcss/scss/modules/_buttons.scss';
+
+
+
+/* LAYOUTS - Page layout styles */
+
+
+
+/*==================
+ HEADER SECTION
+====================*/
+
+@import '/ecommerce/customcss/scss/layouts/_header.scss';
+
+/*==================
+ NAVBAR SECTION
+====================*/
+
+@import '/ecommerce/customcss/scss/layouts/_nav.scss';
+
+/* ALL SECTION */
+
+@import '/ecommerce/customcss/scss/modules/_sections.scss';
+
+/*==================
+ FOOTER SECTION
+====================*/
+
+@import '/ecommerce/customcss/scss/layouts/_footer.scss';
+
+/*==================
+ RESPONSIVE DESIGN
+====================*/
+
+@import '/ecommerce/customcss/scss/modules/_responsive.scss';
