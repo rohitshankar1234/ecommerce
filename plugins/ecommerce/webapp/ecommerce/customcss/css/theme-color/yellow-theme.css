@@ -49,11 +49,11 @@ h2 {
   color: #ffff00;  
 }
 #aa-header .aa-header-bottom .aa-cartbox .aa-cart-link .aa-cart-notify {
-  border: 1px solid #ffff00;  
-  color: #ffff00;  
+  border: 1px solid #003c4d;  
+  color: #003c4d;  
 }
 #aa-header .aa-header-bottom .aa-cartbox .aa-cart-link .aa-cart-notify:after { 
-  border-top-color: #ffff00;  
+  border-top-color: #003c4d;  
 }
 #aa-header .aa-header-bottom .aa-cartbox .aa-cartbox-summary ul li .aa-remove-product:hover, #aa-header .aa-header-bottom .aa-cartbox .aa-cartbox-summary ul li .aa-remove-product:focus {
   border-color: #ffff00;

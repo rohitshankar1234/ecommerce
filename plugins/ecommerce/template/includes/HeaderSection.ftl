@@ -56,8 +56,8 @@
        <header id="aa-header">
          <!-- start header top  -->
          <div class="aa-header-top">
-           <div class="container">
-             <div class="row">
+           <div class="container" >
+             <div class="row" style="background:white!important">
                <div class="col-md-12">
                  <div class="aa-header-top-area">
                    <!-- start header top left -->
@@ -107,7 +107,8 @@
                        <#if (shoppingCartSize > 0)>
                        <li class="hidden-xs"><a href="<@ofbizUrl>quickcheckout</@ofbizUrl>">Checkout</a></li>
                            <#else>
-                              <li class="hidden-xs">Checkout</li>
+                              <li style="font-weight:bold;color: #003c4d;border-right: 1px solid #ddd;font-size: 14px;" class="hidden-xs">
+                              <a class="nav-link" href="#">Checkout</a></li>
                            </#if>
 
 
@@ -135,7 +136,7 @@
          <!-- start header bottom  -->
          <div class="aa-header-bottom">
            <div class="container">
-             <div class="row">
+             <div class="row" style="background:white!important">
                <div class="col-md-12">
                  <div class="aa-header-bottom-area">
                    <!-- logo  -->
@@ -144,7 +145,7 @@
                      <!-- img based logo -->
                       <#if layoutSettings.VT_HDR_IMAGE_URL?has_content>
  <a href="<@ofbizUrl>main</@ofbizUrl>">
-                               <img src="/ecommerce${layoutSettings.VT_HDR_IMAGE_URL}"/>
+                               <!--<img src="/ecommerce${layoutSettings.VT_HDR_IMAGE_URL}"/>-->
                              </a>
 
                                </#if>
@@ -152,13 +153,13 @@
                    </div>
                    <!-- / logo  -->
                     <!-- cart box -->
-                   <div class="aa-cartbox">
+                   <div style="margin-top: 2%; color: #003c4d;"class="aa-cartbox">
                     <#if !userLogin?has_content || (userLogin.userLoginId)! != "anonymous">
 
-                     <a class="aa-cart-link" href="<@ofbizUrl>editShoppingList</@ofbizUrl>">
-                       <span class="fa fa-shopping-basket"></span>
-                       <span class="aa-cart-title"></span>
-                       <span class="aa-cart-notify">2</span>
+                     <a style=" color: #003c4d;"class="aa-cart-link" href="<@ofbizUrl>editShoppingList</@ofbizUrl>">
+                       <span style=" color: #003c4d!important;"class="fa fa-shopping-basket"></span>
+                       <span style=" color: #003c4d!important;" class="aa-cart-title"></span>
+                       <span style=" color: #003c4d!important;" class="aa-cart-notify">2</span>
                      </a>
                      </#if>
                      <div class="aa-cartbox-summary">
@@ -201,7 +202,7 @@
 
                       <form name="keywordsearchform" id="keywordSearchForm" method="post" action="<@ofbizUrl>keywordsearch?VIEW_SIZE=25&amp;PAGING=Y</@ofbizUrl>">
                        <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
-                       <input type="submit" name="find" value="${uiLabelMap.CommonFind}" class="buttontext" />
+                       <button type="submit" name="find" value="${uiLabelMap.CommonFind}" style="width:15%;background: #003c4d;border-radius: inherit;" class="buttontext" >Search</button>
                      </form>
                    </div>
                    <!-- / search box -->

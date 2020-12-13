@@ -238,7 +238,7 @@ img {
   float: left;
 }
 #aa-header .aa-header-top .aa-header-top-left .aa-language {
-  border-right: 1px solid #ccc;
+  /* border-right: 1px solid #ccc; */
   float: left;
 }
 #aa-header .aa-header-top .aa-header-top-left .aa-language .btn {
@@ -357,7 +357,7 @@ img {
 }
 #aa-header .aa-header-top .aa-header-top-right .aa-head-top-nav-right li a {
   display: inline-block;
-  color: #333333;
+  color: #003c4d;
   border-right: 1px solid #ddd;
   font-size: 14px;
   padding: 5px 8px;

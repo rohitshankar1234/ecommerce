@@ -16,16 +16,49 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
+
+<style>
+.card1 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  margin-top:5%
+ 
+}
+
+.price1 {
+  color: grey;
+  font-size: 22px;
+}
+
+.card1 button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card1 button:hover {
+  opacity: 0.7;
+}
+</style>
 <#if productCategoryList?has_content>
 
 
 
 
 
-<div class="card">
-  <h4 class="card-header">
+<div class="card" >
+  <!--<h4 class="card-header">
     Popular Categories
-  </h4>
+  </h4>-->
   <div class="card-body">
         <div class="row">
 
@@ -34,7 +67,7 @@ under the License.
             <#assign cateCount = 0/>
 
             <#list childCategoryList as productCategory>
-              <div class="products-card col-md-6" >
+              <div class="card products-card col-md-6" >
             <#if (cateCount > 2)>
             <#assign cateCount = 0/>
             </#if>
@@ -57,7 +90,7 @@ under the License.
                 </#if>
             </#if>
 
-              <div class="card">
+              <div class="card1">
                 <a href="<@ofbizCatalogAltUrl productCategoryId=productCategoryId/>" class="text-center">
                   <img class="card-img-top" src="${categoryImageUrl}" alt="Card image cap"/>
                 </a>
@@ -68,7 +101,9 @@ under the License.
                     </a>
                   </h4>
                   <p class="card-text">
-                    <ul class="">
+                    <ul style= "
+    max-height: 98px;
+    height: 62px;"class="">
                       <#if productCategoryMembers??>
                         <#assign i = 0/>
                         <#list productCategoryMembers as productCategoryMember>
@@ -84,7 +119,7 @@ under the License.
                             <#assign product = delegator.findOne("Product",
                                     Static["org.apache.ofbiz.base.util.UtilMisc"].toMap("productId",
                                     productCategoryMember.productId), false)>
-                              <li>
+                              <li >
                                 <a class="linktext"
                                    href="<@ofbizCatalogAltUrl productCategoryId="PROMOTIONS"
                                 productId="${product.productId}"/>">
